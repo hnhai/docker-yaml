@@ -68,6 +68,8 @@ services:
     depends_on:
       - connect
 
+# File yaml config SourceConnector
+
 #connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
 #mode=incrementing
 #incrementing.column.name=id
@@ -80,5 +82,5 @@ services:
 #connection.url=jdbc:mysql://192.168.31.142:3306/test?user=test&password=test
 #table.whitelist=users
 
-# Download J-connector lib and mount volume to Kafka connect. Here is J-Connector for MySQL 5.7
+# Tạo thư mục /tmp/quickstart/jars tải connector và mount image.
 #  curl -k -SL "http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.37.tar.gz" | tar -xzf - -C /tmp/quickstart/jars --strip-components=1 mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar

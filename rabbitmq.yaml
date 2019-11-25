@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "8081:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+
+
+# https://medium.com/@buihuycuong/nh%E1%BB%AFng-%C4%91i%E1%BB%81u-c%E1%BA%A7n-bi%E1%BA%BFt-v%E1%BB%81-rabbitmq-354a37ecf218
+
+# Các loại Exchange
+# 1. Direct Exchange -> routing key ( Sử dụng để định danh đích đến, nếu không có đích nào phù hợp thì tự động xóa msg ).
+# 2. Fanout Exchange -> Publish msg cho tất cả các thằng Subscribe.
+# 3. Topic Exchange -> routing pattern khai báo trong binding ( Consumer dùng pattern để chỉ ra topic muốn Subscribe ).
+# 4. Headers Exchange -> Tương tự Topic Exchange nhưng lấy pattern ở Header
