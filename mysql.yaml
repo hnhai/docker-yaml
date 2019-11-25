@@ -1,7 +1,7 @@
 version: '3'
 services:
   database:
-    image: mysql
+    image: mysql:5.7
     container_name: database.dev
     command: mysqld --user=root --verbose
     ports:
